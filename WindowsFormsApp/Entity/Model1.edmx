@@ -1,0 +1,313 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="OgrenciSinavModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="TblAkademisyen">
+          <Key>
+            <PropertyRef Name="AkademisyenId" />
+          </Key>
+          <Property Name="AkademisyenId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="AkademisyenAd" Type="nvarchar" MaxLength="30" />
+          <Property Name="AkademisyenSoyad" Type="nvarchar" MaxLength="30" />
+          <Property Name="AkademisyenUnvan" Type="nvarchar" MaxLength="30" />
+          <Property Name="AkademisyenNumara" Type="char" MaxLength="10" />
+          <Property Name="AkademisyenSifre" Type="nvarchar" MaxLength="30" />
+          <Property Name="AkademisyenMail" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="TblBolumler">
+          <Key>
+            <PropertyRef Name="BolumId" />
+          </Key>
+          <Property Name="BolumId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="BolumAd" Type="nvarchar" MaxLength="30" />
+        </EntityType>
+        <EntityType Name="TblDersler">
+          <Key>
+            <PropertyRef Name="DersId" />
+          </Key>
+          <Property Name="DersId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="DersAd" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="TblNotlar">
+          <Key>
+            <PropertyRef Name="NotId" />
+          </Key>
+          <Property Name="NotId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="VizeNotu" Type="tinyint" />
+          <Property Name="FinalNotu" Type="tinyint" />
+          <Property Name="ButunlemeNotu" Type="tinyint" />
+          <Property Name="DersId" Type="int" />
+          <Property Name="OgrId" Type="int" />
+        </EntityType>
+        <EntityType Name="TblOgrenci">
+          <Key>
+            <PropertyRef Name="OgrId" />
+          </Key>
+          <Property Name="OgrId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="OgrAd" Type="nvarchar" MaxLength="50" />
+          <Property Name="OgrSoyad" Type="nvarchar" MaxLength="50" />
+          <Property Name="OgrNumara" Type="char" MaxLength="5" />
+          <Property Name="OgrSifre" Type="nvarchar" MaxLength="20" />
+          <Property Name="OgrMail" Type="nvarchar" MaxLength="50" />
+          <Property Name="OgrResim" Type="nvarchar(max)" />
+          <Property Name="OgrBolum" Type="int" />
+        </EntityType>
+        <Association Name="FK_TblNotlar_TblDersler">
+          <End Role="TblDersler" Type="Self.TblDersler" Multiplicity="0..1" />
+          <End Role="TblNotlar" Type="Self.TblNotlar" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TblDersler">
+              <PropertyRef Name="DersId" />
+            </Principal>
+            <Dependent Role="TblNotlar">
+              <PropertyRef Name="DersId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TblNotlar_TblOgrenci">
+          <End Role="TblOgrenci" Type="Self.TblOgrenci" Multiplicity="0..1" />
+          <End Role="TblNotlar" Type="Self.TblNotlar" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TblOgrenci">
+              <PropertyRef Name="OgrId" />
+            </Principal>
+            <Dependent Role="TblNotlar">
+              <PropertyRef Name="OgrId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TblOgrenci_TblBolumler">
+          <End Role="TblBolumler" Type="Self.TblBolumler" Multiplicity="0..1" />
+          <End Role="TblOgrenci" Type="Self.TblOgrenci" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TblBolumler">
+              <PropertyRef Name="BolumId" />
+            </Principal>
+            <Dependent Role="TblOgrenci">
+              <PropertyRef Name="OgrBolum" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="OgrenciSinavModelStoreContainer">
+          <EntitySet Name="TblAkademisyen" EntityType="Self.TblAkademisyen" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TblBolumler" EntityType="Self.TblBolumler" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TblDersler" EntityType="Self.TblDersler" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TblNotlar" EntityType="Self.TblNotlar" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TblOgrenci" EntityType="Self.TblOgrenci" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK_TblNotlar_TblDersler" Association="Self.FK_TblNotlar_TblDersler">
+            <End Role="TblDersler" EntitySet="TblDersler" />
+            <End Role="TblNotlar" EntitySet="TblNotlar" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TblNotlar_TblOgrenci" Association="Self.FK_TblNotlar_TblOgrenci">
+            <End Role="TblOgrenci" EntitySet="TblOgrenci" />
+            <End Role="TblNotlar" EntitySet="TblNotlar" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TblOgrenci_TblBolumler" Association="Self.FK_TblOgrenci_TblBolumler">
+            <End Role="TblBolumler" EntitySet="TblBolumler" />
+            <End Role="TblOgrenci" EntitySet="TblOgrenci" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="OgrenciSinavModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="TblAkademisyen">
+          <Key>
+            <PropertyRef Name="AkademisyenId" />
+          </Key>
+          <Property Name="AkademisyenId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="AkademisyenAd" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+          <Property Name="AkademisyenSoyad" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+          <Property Name="AkademisyenUnvan" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+          <Property Name="AkademisyenNumara" Type="String" MaxLength="10" FixedLength="true" Unicode="false" />
+          <Property Name="AkademisyenSifre" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+          <Property Name="AkademisyenMail" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="TblBolumler">
+          <Key>
+            <PropertyRef Name="BolumId" />
+          </Key>
+          <Property Name="BolumId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="BolumAd" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="TblOgrenci" Relationship="Self.FK_TblOgrenci_TblBolumler" FromRole="TblBolumler" ToRole="TblOgrenci" />
+        </EntityType>
+        <EntityType Name="TblDersler">
+          <Key>
+            <PropertyRef Name="DersId" />
+          </Key>
+          <Property Name="DersId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="DersAd" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="TblNotlar" Relationship="Self.FK_TblNotlar_TblDersler" FromRole="TblDersler" ToRole="TblNotlar" />
+        </EntityType>
+        <EntityType Name="TblNotlar">
+          <Key>
+            <PropertyRef Name="NotId" />
+          </Key>
+          <Property Name="NotId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="VizeNotu" Type="Byte" />
+          <Property Name="FinalNotu" Type="Byte" />
+          <Property Name="ButunlemeNotu" Type="Byte" />
+          <Property Name="DersId" Type="Int32" />
+          <Property Name="OgrId" Type="Int32" />
+          <NavigationProperty Name="TblDersler" Relationship="Self.FK_TblNotlar_TblDersler" FromRole="TblNotlar" ToRole="TblDersler" />
+          <NavigationProperty Name="TblOgrenci" Relationship="Self.FK_TblNotlar_TblOgrenci" FromRole="TblNotlar" ToRole="TblOgrenci" />
+        </EntityType>
+        <EntityType Name="TblOgrenci">
+          <Key>
+            <PropertyRef Name="OgrId" />
+          </Key>
+          <Property Name="OgrId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="OgrAd" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="OgrSoyad" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="OgrNumara" Type="String" MaxLength="5" FixedLength="true" Unicode="false" />
+          <Property Name="OgrSifre" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="OgrMail" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="OgrResim" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="OgrBolum" Type="Int32" />
+          <NavigationProperty Name="TblBolumler" Relationship="Self.FK_TblOgrenci_TblBolumler" FromRole="TblOgrenci" ToRole="TblBolumler" />
+          <NavigationProperty Name="TblNotlar" Relationship="Self.FK_TblNotlar_TblOgrenci" FromRole="TblOgrenci" ToRole="TblNotlar" />
+        </EntityType>
+        <Association Name="FK_TblOgrenci_TblBolumler">
+          <End Role="TblBolumler" Type="Self.TblBolumler" Multiplicity="0..1" />
+          <End Role="TblOgrenci" Type="Self.TblOgrenci" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TblBolumler">
+              <PropertyRef Name="BolumId" />
+            </Principal>
+            <Dependent Role="TblOgrenci">
+              <PropertyRef Name="OgrBolum" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TblNotlar_TblDersler">
+          <End Role="TblDersler" Type="Self.TblDersler" Multiplicity="0..1" />
+          <End Role="TblNotlar" Type="Self.TblNotlar" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TblDersler">
+              <PropertyRef Name="DersId" />
+            </Principal>
+            <Dependent Role="TblNotlar">
+              <PropertyRef Name="DersId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TblNotlar_TblOgrenci">
+          <End Role="TblOgrenci" Type="Self.TblOgrenci" Multiplicity="0..1" />
+          <End Role="TblNotlar" Type="Self.TblNotlar" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TblOgrenci">
+              <PropertyRef Name="OgrId" />
+            </Principal>
+            <Dependent Role="TblNotlar">
+              <PropertyRef Name="OgrId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="OgrenciSinavEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="TblAkademisyen" EntityType="Self.TblAkademisyen" />
+          <EntitySet Name="TblBolumler" EntityType="Self.TblBolumler" />
+          <EntitySet Name="TblDersler" EntityType="Self.TblDersler" />
+          <EntitySet Name="TblNotlar" EntityType="Self.TblNotlar" />
+          <EntitySet Name="TblOgrenci" EntityType="Self.TblOgrenci" />
+          <AssociationSet Name="FK_TblOgrenci_TblBolumler" Association="Self.FK_TblOgrenci_TblBolumler">
+            <End Role="TblBolumler" EntitySet="TblBolumler" />
+            <End Role="TblOgrenci" EntitySet="TblOgrenci" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TblNotlar_TblDersler" Association="Self.FK_TblNotlar_TblDersler">
+            <End Role="TblDersler" EntitySet="TblDersler" />
+            <End Role="TblNotlar" EntitySet="TblNotlar" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TblNotlar_TblOgrenci" Association="Self.FK_TblNotlar_TblOgrenci">
+            <End Role="TblOgrenci" EntitySet="TblOgrenci" />
+            <End Role="TblNotlar" EntitySet="TblNotlar" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="OgrenciSinavModelStoreContainer" CdmEntityContainer="OgrenciSinavEntities">
+          <EntitySetMapping Name="TblAkademisyen">
+            <EntityTypeMapping TypeName="OgrenciSinavModel.TblAkademisyen">
+              <MappingFragment StoreEntitySet="TblAkademisyen">
+                <ScalarProperty Name="AkademisyenId" ColumnName="AkademisyenId" />
+                <ScalarProperty Name="AkademisyenAd" ColumnName="AkademisyenAd" />
+                <ScalarProperty Name="AkademisyenSoyad" ColumnName="AkademisyenSoyad" />
+                <ScalarProperty Name="AkademisyenUnvan" ColumnName="AkademisyenUnvan" />
+                <ScalarProperty Name="AkademisyenNumara" ColumnName="AkademisyenNumara" />
+                <ScalarProperty Name="AkademisyenSifre" ColumnName="AkademisyenSifre" />
+                <ScalarProperty Name="AkademisyenMail" ColumnName="AkademisyenMail" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TblBolumler">
+            <EntityTypeMapping TypeName="OgrenciSinavModel.TblBolumler">
+              <MappingFragment StoreEntitySet="TblBolumler">
+                <ScalarProperty Name="BolumId" ColumnName="BolumId" />
+                <ScalarProperty Name="BolumAd" ColumnName="BolumAd" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TblDersler">
+            <EntityTypeMapping TypeName="OgrenciSinavModel.TblDersler">
+              <MappingFragment StoreEntitySet="TblDersler">
+                <ScalarProperty Name="DersId" ColumnName="DersId" />
+                <ScalarProperty Name="DersAd" ColumnName="DersAd" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TblNotlar">
+            <EntityTypeMapping TypeName="OgrenciSinavModel.TblNotlar">
+              <MappingFragment StoreEntitySet="TblNotlar">
+                <ScalarProperty Name="NotId" ColumnName="NotId" />
+                <ScalarProperty Name="VizeNotu" ColumnName="VizeNotu" />
+                <ScalarProperty Name="FinalNotu" ColumnName="FinalNotu" />
+                <ScalarProperty Name="ButunlemeNotu" ColumnName="ButunlemeNotu" />
+                <ScalarProperty Name="DersId" ColumnName="DersId" />
+                <ScalarProperty Name="OgrId" ColumnName="OgrId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TblOgrenci">
+            <EntityTypeMapping TypeName="OgrenciSinavModel.TblOgrenci">
+              <MappingFragment StoreEntitySet="TblOgrenci">
+                <ScalarProperty Name="OgrId" ColumnName="OgrId" />
+                <ScalarProperty Name="OgrAd" ColumnName="OgrAd" />
+                <ScalarProperty Name="OgrSoyad" ColumnName="OgrSoyad" />
+                <ScalarProperty Name="OgrNumara" ColumnName="OgrNumara" />
+                <ScalarProperty Name="OgrSifre" ColumnName="OgrSifre" />
+                <ScalarProperty Name="OgrMail" ColumnName="OgrMail" />
+                <ScalarProperty Name="OgrResim" ColumnName="OgrResim" />
+                <ScalarProperty Name="OgrBolum" ColumnName="OgrBolum" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

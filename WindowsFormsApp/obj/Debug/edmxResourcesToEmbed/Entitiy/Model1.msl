@@ -1,0 +1,60 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="OgrenciSinavModelStoreContainer" CdmEntityContainer="OgrenciSinavEntities">
+    <EntitySetMapping Name="TblAkademisyen">
+      <EntityTypeMapping TypeName="OgrenciSinavModel.TblAkademisyen">
+        <MappingFragment StoreEntitySet="TblAkademisyen">
+          <ScalarProperty Name="AkademisyenId" ColumnName="AkademisyenId" />
+          <ScalarProperty Name="AkademisyenAd" ColumnName="AkademisyenAd" />
+          <ScalarProperty Name="AkademisyenSoyad" ColumnName="AkademisyenSoyad" />
+          <ScalarProperty Name="AkademisyenUnvan" ColumnName="AkademisyenUnvan" />
+          <ScalarProperty Name="AkademisyenNumara" ColumnName="AkademisyenNumara" />
+          <ScalarProperty Name="AkademisyenSifre" ColumnName="AkademisyenSifre" />
+          <ScalarProperty Name="AkademisyenMail" ColumnName="AkademisyenMail" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TblBolumler">
+      <EntityTypeMapping TypeName="OgrenciSinavModel.TblBolumler">
+        <MappingFragment StoreEntitySet="TblBolumler">
+          <ScalarProperty Name="BolumId" ColumnName="BolumId" />
+          <ScalarProperty Name="BolumAd" ColumnName="BolumAd" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TblDersler">
+      <EntityTypeMapping TypeName="OgrenciSinavModel.TblDersler">
+        <MappingFragment StoreEntitySet="TblDersler">
+          <ScalarProperty Name="DersId" ColumnName="DersId" />
+          <ScalarProperty Name="DersAd" ColumnName="DersAd" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TblNotlar">
+      <EntityTypeMapping TypeName="OgrenciSinavModel.TblNotlar">
+        <MappingFragment StoreEntitySet="TblNotlar">
+          <ScalarProperty Name="NotId" ColumnName="NotId" />
+          <ScalarProperty Name="VizeNotu" ColumnName="VizeNotu" />
+          <ScalarProperty Name="FinalNotu" ColumnName="FinalNotu" />
+          <ScalarProperty Name="ButunlemeNotu" ColumnName="ButunlemeNotu" />
+          <ScalarProperty Name="DersId" ColumnName="DersId" />
+          <ScalarProperty Name="OgrId" ColumnName="OgrId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TblOgrenci">
+      <EntityTypeMapping TypeName="OgrenciSinavModel.TblOgrenci">
+        <MappingFragment StoreEntitySet="TblOgrenci">
+          <ScalarProperty Name="OgrId" ColumnName="OgrId" />
+          <ScalarProperty Name="OgrAd" ColumnName="OgrAd" />
+          <ScalarProperty Name="OgrSoyad" ColumnName="OgrSoyad" />
+          <ScalarProperty Name="OgrNumara" ColumnName="OgrNumara" />
+          <ScalarProperty Name="OgrSifre" ColumnName="OgrSifre" />
+          <ScalarProperty Name="OgrMail" ColumnName="OgrMail" />
+          <ScalarProperty Name="OgrResim" ColumnName="OgrResim" />
+          <ScalarProperty Name="OgrBolum" ColumnName="OgrBolum" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>
