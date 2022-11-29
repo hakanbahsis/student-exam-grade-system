@@ -29,25 +29,26 @@
         private void InitializeComponent()
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.txtNumara = new System.Windows.Forms.MaskedTextBox();
+            this.cmbBolum = new System.Windows.Forms.ComboBox();
+            this.label8 = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.txtResim = new System.Windows.Forms.TextBox();
+            this.txtMail = new System.Windows.Forms.TextBox();
+            this.txtSifreTekrar = new System.Windows.Forms.TextBox();
+            this.txtSifre = new System.Windows.Forms.TextBox();
+            this.txtSoyad = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.btnKaydet = new System.Windows.Forms.Button();
             this.txtAd = new System.Windows.Forms.TextBox();
-            this.label2 = new System.Windows.Forms.Label();
-            this.txtSoyad = new System.Windows.Forms.TextBox();
-            this.label3 = new System.Windows.Forms.Label();
-            this.txtSifre = new System.Windows.Forms.TextBox();
-            this.label4 = new System.Windows.Forms.Label();
-            this.txtSifreTekrar = new System.Windows.Forms.TextBox();
-            this.label5 = new System.Windows.Forms.Label();
-            this.txtMail = new System.Windows.Forms.TextBox();
-            this.label6 = new System.Windows.Forms.Label();
-            this.txtResim = new System.Windows.Forms.TextBox();
-            this.label7 = new System.Windows.Forms.Label();
-            this.label8 = new System.Windows.Forms.Label();
-            this.cmbBolum = new System.Windows.Forms.ComboBox();
             this.label9 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
-            this.txtNumara = new System.Windows.Forms.MaskedTextBox();
+            this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -75,6 +76,154 @@
             this.groupBox1.Size = new System.Drawing.Size(456, 393);
             this.groupBox1.TabIndex = 6;
             this.groupBox1.TabStop = false;
+            // 
+            // txtNumara
+            // 
+            this.txtNumara.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(51)))), ((int)(((byte)(64)))));
+            this.txtNumara.ForeColor = System.Drawing.Color.White;
+            this.txtNumara.Location = new System.Drawing.Point(137, 104);
+            this.txtNumara.Mask = "00000";
+            this.txtNumara.Name = "txtNumara";
+            this.txtNumara.Size = new System.Drawing.Size(304, 28);
+            this.txtNumara.TabIndex = 3;
+            // 
+            // cmbBolum
+            // 
+            this.cmbBolum.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(51)))), ((int)(((byte)(64)))));
+            this.cmbBolum.ForeColor = System.Drawing.Color.White;
+            this.cmbBolum.FormattingEnabled = true;
+            this.cmbBolum.Location = new System.Drawing.Point(136, 274);
+            this.cmbBolum.Name = "cmbBolum";
+            this.cmbBolum.Size = new System.Drawing.Size(305, 30);
+            this.cmbBolum.TabIndex = 8;
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Bold);
+            this.label8.ForeColor = System.Drawing.Color.White;
+            this.label8.Location = new System.Drawing.Point(63, 274);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(67, 25);
+            this.label8.TabIndex = 5;
+            this.label8.Text = "Bölüm";
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Bold);
+            this.label7.ForeColor = System.Drawing.Color.White;
+            this.label7.Location = new System.Drawing.Point(67, 235);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(63, 25);
+            this.label7.TabIndex = 3;
+            this.label7.Text = "Resim";
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Bold);
+            this.label6.ForeColor = System.Drawing.Color.White;
+            this.label6.Location = new System.Drawing.Point(81, 202);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(49, 25);
+            this.label6.TabIndex = 3;
+            this.label6.Text = "Mail";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Bold);
+            this.label5.ForeColor = System.Drawing.Color.White;
+            this.label5.Location = new System.Drawing.Point(21, 169);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(109, 25);
+            this.label5.TabIndex = 3;
+            this.label5.Text = "Şifre Tekrar";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Bold);
+            this.label4.ForeColor = System.Drawing.Color.White;
+            this.label4.Location = new System.Drawing.Point(79, 136);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(51, 25);
+            this.label4.TabIndex = 3;
+            this.label4.Text = "Şifre";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Bold);
+            this.label3.ForeColor = System.Drawing.Color.White;
+            this.label3.Location = new System.Drawing.Point(50, 103);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(80, 25);
+            this.label3.TabIndex = 3;
+            this.label3.Text = "Numara";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Bold);
+            this.label2.ForeColor = System.Drawing.Color.White;
+            this.label2.Location = new System.Drawing.Point(61, 70);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(69, 25);
+            this.label2.TabIndex = 3;
+            this.label2.Text = "Soyadı";
+            // 
+            // txtResim
+            // 
+            this.txtResim.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(51)))), ((int)(((byte)(64)))));
+            this.txtResim.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.txtResim.ForeColor = System.Drawing.Color.White;
+            this.txtResim.Location = new System.Drawing.Point(136, 236);
+            this.txtResim.Name = "txtResim";
+            this.txtResim.Size = new System.Drawing.Size(305, 27);
+            this.txtResim.TabIndex = 7;
+            this.txtResim.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.txtResim_MouseDoubleClick);
+            // 
+            // txtMail
+            // 
+            this.txtMail.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(51)))), ((int)(((byte)(64)))));
+            this.txtMail.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.txtMail.ForeColor = System.Drawing.Color.White;
+            this.txtMail.Location = new System.Drawing.Point(136, 203);
+            this.txtMail.Name = "txtMail";
+            this.txtMail.Size = new System.Drawing.Size(305, 27);
+            this.txtMail.TabIndex = 6;
+            // 
+            // txtSifreTekrar
+            // 
+            this.txtSifreTekrar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(51)))), ((int)(((byte)(64)))));
+            this.txtSifreTekrar.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.txtSifreTekrar.ForeColor = System.Drawing.Color.White;
+            this.txtSifreTekrar.Location = new System.Drawing.Point(136, 170);
+            this.txtSifreTekrar.Name = "txtSifreTekrar";
+            this.txtSifreTekrar.Size = new System.Drawing.Size(305, 27);
+            this.txtSifreTekrar.TabIndex = 5;
+            // 
+            // txtSifre
+            // 
+            this.txtSifre.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(51)))), ((int)(((byte)(64)))));
+            this.txtSifre.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.txtSifre.ForeColor = System.Drawing.Color.White;
+            this.txtSifre.Location = new System.Drawing.Point(136, 137);
+            this.txtSifre.Name = "txtSifre";
+            this.txtSifre.Size = new System.Drawing.Size(305, 27);
+            this.txtSifre.TabIndex = 4;
+            // 
+            // txtSoyad
+            // 
+            this.txtSoyad.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(51)))), ((int)(((byte)(64)))));
+            this.txtSoyad.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.txtSoyad.ForeColor = System.Drawing.Color.White;
+            this.txtSoyad.Location = new System.Drawing.Point(136, 71);
+            this.txtSoyad.Name = "txtSoyad";
+            this.txtSoyad.Size = new System.Drawing.Size(305, 27);
+            this.txtSoyad.TabIndex = 2;
             // 
             // label1
             // 
@@ -112,143 +261,6 @@
             this.txtAd.Size = new System.Drawing.Size(305, 27);
             this.txtAd.TabIndex = 1;
             // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Bold);
-            this.label2.ForeColor = System.Drawing.Color.White;
-            this.label2.Location = new System.Drawing.Point(61, 70);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(69, 25);
-            this.label2.TabIndex = 3;
-            this.label2.Text = "Soyadı";
-            // 
-            // txtSoyad
-            // 
-            this.txtSoyad.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(51)))), ((int)(((byte)(64)))));
-            this.txtSoyad.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.txtSoyad.ForeColor = System.Drawing.Color.White;
-            this.txtSoyad.Location = new System.Drawing.Point(136, 71);
-            this.txtSoyad.Name = "txtSoyad";
-            this.txtSoyad.Size = new System.Drawing.Size(305, 27);
-            this.txtSoyad.TabIndex = 2;
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Bold);
-            this.label3.ForeColor = System.Drawing.Color.White;
-            this.label3.Location = new System.Drawing.Point(50, 103);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(80, 25);
-            this.label3.TabIndex = 3;
-            this.label3.Text = "Numara";
-            // 
-            // txtSifre
-            // 
-            this.txtSifre.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(51)))), ((int)(((byte)(64)))));
-            this.txtSifre.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.txtSifre.ForeColor = System.Drawing.Color.White;
-            this.txtSifre.Location = new System.Drawing.Point(136, 137);
-            this.txtSifre.Name = "txtSifre";
-            this.txtSifre.Size = new System.Drawing.Size(305, 27);
-            this.txtSifre.TabIndex = 4;
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Bold);
-            this.label4.ForeColor = System.Drawing.Color.White;
-            this.label4.Location = new System.Drawing.Point(79, 136);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(51, 25);
-            this.label4.TabIndex = 3;
-            this.label4.Text = "Şifre";
-            // 
-            // txtSifreTekrar
-            // 
-            this.txtSifreTekrar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(51)))), ((int)(((byte)(64)))));
-            this.txtSifreTekrar.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.txtSifreTekrar.ForeColor = System.Drawing.Color.White;
-            this.txtSifreTekrar.Location = new System.Drawing.Point(136, 170);
-            this.txtSifreTekrar.Name = "txtSifreTekrar";
-            this.txtSifreTekrar.Size = new System.Drawing.Size(305, 27);
-            this.txtSifreTekrar.TabIndex = 5;
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Bold);
-            this.label5.ForeColor = System.Drawing.Color.White;
-            this.label5.Location = new System.Drawing.Point(21, 169);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(109, 25);
-            this.label5.TabIndex = 3;
-            this.label5.Text = "Şifre Tekrar";
-            // 
-            // txtMail
-            // 
-            this.txtMail.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(51)))), ((int)(((byte)(64)))));
-            this.txtMail.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.txtMail.ForeColor = System.Drawing.Color.White;
-            this.txtMail.Location = new System.Drawing.Point(136, 203);
-            this.txtMail.Name = "txtMail";
-            this.txtMail.Size = new System.Drawing.Size(305, 27);
-            this.txtMail.TabIndex = 6;
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Bold);
-            this.label6.ForeColor = System.Drawing.Color.White;
-            this.label6.Location = new System.Drawing.Point(81, 202);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(49, 25);
-            this.label6.TabIndex = 3;
-            this.label6.Text = "Mail";
-            // 
-            // txtResim
-            // 
-            this.txtResim.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(51)))), ((int)(((byte)(64)))));
-            this.txtResim.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.txtResim.ForeColor = System.Drawing.Color.White;
-            this.txtResim.Location = new System.Drawing.Point(136, 236);
-            this.txtResim.Name = "txtResim";
-            this.txtResim.Size = new System.Drawing.Size(305, 27);
-            this.txtResim.TabIndex = 7;
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Bold);
-            this.label7.ForeColor = System.Drawing.Color.White;
-            this.label7.Location = new System.Drawing.Point(67, 235);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(63, 25);
-            this.label7.TabIndex = 3;
-            this.label7.Text = "Resim";
-            // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Bold);
-            this.label8.ForeColor = System.Drawing.Color.White;
-            this.label8.Location = new System.Drawing.Point(63, 274);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(67, 25);
-            this.label8.TabIndex = 5;
-            this.label8.Text = "Bölüm";
-            // 
-            // cmbBolum
-            // 
-            this.cmbBolum.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(51)))), ((int)(((byte)(64)))));
-            this.cmbBolum.ForeColor = System.Drawing.Color.White;
-            this.cmbBolum.FormattingEnabled = true;
-            this.cmbBolum.Location = new System.Drawing.Point(136, 274);
-            this.cmbBolum.Name = "cmbBolum";
-            this.cmbBolum.Size = new System.Drawing.Size(305, 30);
-            this.cmbBolum.TabIndex = 8;
-            // 
             // label9
             // 
             this.label9.AutoSize = true;
@@ -275,15 +287,9 @@
             this.button1.UseVisualStyleBackColor = false;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
-            // txtNumara
+            // openFileDialog1
             // 
-            this.txtNumara.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(51)))), ((int)(((byte)(64)))));
-            this.txtNumara.ForeColor = System.Drawing.Color.White;
-            this.txtNumara.Location = new System.Drawing.Point(137, 104);
-            this.txtNumara.Mask = "00000";
-            this.txtNumara.Name = "txtNumara";
-            this.txtNumara.Size = new System.Drawing.Size(304, 28);
-            this.txtNumara.TabIndex = 3;
+            this.openFileDialog1.FileName = "openFileDialog1";
             // 
             // FrmOgrenciKayit
             // 
@@ -296,7 +302,7 @@
             this.Controls.Add(this.groupBox1);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "FrmOgrenciKayit";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Ogrenci Kayıt";
@@ -330,5 +336,6 @@
         private System.Windows.Forms.TextBox txtAd;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.MaskedTextBox txtNumara;
+        private System.Windows.Forms.OpenFileDialog openFileDialog1;
     }
 }

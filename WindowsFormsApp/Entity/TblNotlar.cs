@@ -20,6 +20,7 @@ namespace WindowsFormsApp.Entity
         public Nullable<byte> ButunlemeNotu { get; set; }
         public Nullable<int> DersId { get; set; }
         public Nullable<int> OgrId { get; set; }
+        public Nullable<decimal> Ortalama { get; set; }
     
         public virtual TblDersler TblDersler { get; set; }
         public virtual TblOgrenci TblOgrenci { get; set; }

@@ -28,6 +28,7 @@ namespace WindowsFormsApp.Entity
         public string OgrMail { get; set; }
         public string OgrResim { get; set; }
         public Nullable<int> OgrBolum { get; set; }
+        public Nullable<bool> OgrDurum { get; set; }
     
         public virtual TblBolumler TblBolumler { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]

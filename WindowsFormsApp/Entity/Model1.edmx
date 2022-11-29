@@ -4,7 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="OgrenciSinavModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+    <Schema Namespace="OgrenciSinavModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="TblAkademisyen">
           <Key>
             <PropertyRef Name="AkademisyenId" />
@@ -39,6 +39,7 @@
           <Property Name="VizeNotu" Type="tinyint" />
           <Property Name="FinalNotu" Type="tinyint" />
           <Property Name="ButunlemeNotu" Type="tinyint" />
+          <Property Name="Ortalama" Type="decimal" Precision="5" Scale="2" />
           <Property Name="DersId" Type="int" />
           <Property Name="OgrId" Type="int" />
         </EntityType>
@@ -54,6 +55,7 @@
           <Property Name="OgrMail" Type="nvarchar" MaxLength="50" />
           <Property Name="OgrResim" Type="nvarchar(max)" />
           <Property Name="OgrBolum" Type="int" />
+          <Property Name="OgrDurum" Type="bit" />
         </EntityType>
         <Association Name="FK_TblNotlar_TblDersler">
           <End Role="TblDersler" Type="Self.TblDersler" Multiplicity="0..1" />
@@ -110,8 +112,7 @@
             <End Role="TblOgrenci" EntitySet="TblOgrenci" />
           </AssociationSet>
         </EntityContainer>
-      </Schema>
-    </edmx:StorageModels>
+      </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="OgrenciSinavModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
@@ -155,6 +156,7 @@
           <Property Name="OgrId" Type="Int32" />
           <NavigationProperty Name="TblDersler" Relationship="Self.FK_TblNotlar_TblDersler" FromRole="TblNotlar" ToRole="TblDersler" />
           <NavigationProperty Name="TblOgrenci" Relationship="Self.FK_TblNotlar_TblOgrenci" FromRole="TblNotlar" ToRole="TblOgrenci" />
+          <Property Name="Ortalama" Type="Decimal" Precision="5" Scale="2" />
         </EntityType>
         <EntityType Name="TblOgrenci">
           <Key>
@@ -170,6 +172,7 @@
           <Property Name="OgrBolum" Type="Int32" />
           <NavigationProperty Name="TblBolumler" Relationship="Self.FK_TblOgrenci_TblBolumler" FromRole="TblOgrenci" ToRole="TblBolumler" />
           <NavigationProperty Name="TblNotlar" Relationship="Self.FK_TblNotlar_TblOgrenci" FromRole="TblOgrenci" ToRole="TblNotlar" />
+          <Property Name="OgrDurum" Type="Boolean" />
         </EntityType>
         <Association Name="FK_TblOgrenci_TblBolumler">
           <End Role="TblBolumler" Type="Self.TblBolumler" Multiplicity="0..1" />
@@ -264,6 +267,7 @@
           <EntitySetMapping Name="TblNotlar">
             <EntityTypeMapping TypeName="OgrenciSinavModel.TblNotlar">
               <MappingFragment StoreEntitySet="TblNotlar">
+                <ScalarProperty Name="Ortalama" ColumnName="Ortalama" />
                 <ScalarProperty Name="NotId" ColumnName="NotId" />
                 <ScalarProperty Name="VizeNotu" ColumnName="VizeNotu" />
                 <ScalarProperty Name="FinalNotu" ColumnName="FinalNotu" />
@@ -276,6 +280,7 @@
           <EntitySetMapping Name="TblOgrenci">
             <EntityTypeMapping TypeName="OgrenciSinavModel.TblOgrenci">
               <MappingFragment StoreEntitySet="TblOgrenci">
+                <ScalarProperty Name="OgrDurum" ColumnName="OgrDurum" />
                 <ScalarProperty Name="OgrId" ColumnName="OgrId" />
                 <ScalarProperty Name="OgrAd" ColumnName="OgrAd" />
                 <ScalarProperty Name="OgrSoyad" ColumnName="OgrSoyad" />

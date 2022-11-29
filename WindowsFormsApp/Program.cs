@@ -16,7 +16,7 @@ namespace WindowsFormsApp
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Formlar.FrmOgrenciKayit());
+            Application.Run(new Formlar.FrmNotlar());
         }
     }
 }

@@ -33,6 +33,7 @@
     <EntitySetMapping Name="TblNotlar">
       <EntityTypeMapping TypeName="OgrenciSinavModel.TblNotlar">
         <MappingFragment StoreEntitySet="TblNotlar">
+          <ScalarProperty Name="Ortalama" ColumnName="Ortalama" />
           <ScalarProperty Name="NotId" ColumnName="NotId" />
           <ScalarProperty Name="VizeNotu" ColumnName="VizeNotu" />
           <ScalarProperty Name="FinalNotu" ColumnName="FinalNotu" />
@@ -45,6 +46,7 @@
     <EntitySetMapping Name="TblOgrenci">
       <EntityTypeMapping TypeName="OgrenciSinavModel.TblOgrenci">
         <MappingFragment StoreEntitySet="TblOgrenci">
+          <ScalarProperty Name="OgrDurum" ColumnName="OgrDurum" />
           <ScalarProperty Name="OgrId" ColumnName="OgrId" />
           <ScalarProperty Name="OgrAd" ColumnName="OgrAd" />
           <ScalarProperty Name="OgrSoyad" ColumnName="OgrSoyad" />

@@ -34,6 +34,7 @@
     <Property Name="VizeNotu" Type="tinyint" />
     <Property Name="FinalNotu" Type="tinyint" />
     <Property Name="ButunlemeNotu" Type="tinyint" />
+    <Property Name="Ortalama" Type="decimal" Precision="5" Scale="2" />
     <Property Name="DersId" Type="int" />
     <Property Name="OgrId" Type="int" />
   </EntityType>
@@ -49,6 +50,7 @@
     <Property Name="OgrMail" Type="nvarchar" MaxLength="50" />
     <Property Name="OgrResim" Type="nvarchar(max)" />
     <Property Name="OgrBolum" Type="int" />
+    <Property Name="OgrDurum" Type="bit" />
   </EntityType>
   <Association Name="FK_TblNotlar_TblDersler">
     <End Role="TblDersler" Type="Self.TblDersler" Multiplicity="0..1" />

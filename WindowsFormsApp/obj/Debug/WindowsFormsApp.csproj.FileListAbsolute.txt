@@ -17,3 +17,4 @@ C:\Users\Lenovo\source\repos\StudentExamNoteSystem\WindowsFormsApp\obj\Debug\Win
 C:\Users\Lenovo\source\repos\StudentExamNoteSystem\WindowsFormsApp\obj\Debug\WindowsFormsApp.Formlar.FrmOgrenciKayit.resources
 C:\Users\Lenovo\source\repos\StudentExamNoteSystem\WindowsFormsApp\obj\Debug\WindowsFormsApp.Formlar.FrmBolumListesi.resources
 C:\Users\Lenovo\source\repos\StudentExamNoteSystem\WindowsFormsApp\obj\Debug\WindowsFormsApp.Formlar.FrmOgrenci.resources
+C:\Users\Lenovo\source\repos\StudentExamNoteSystem\WindowsFormsApp\obj\Debug\WindowsFormsApp.Formlar.FrmNotlar.resources

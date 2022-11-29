@@ -40,6 +40,7 @@
     <Property Name="OgrId" Type="Int32" />
     <NavigationProperty Name="TblDersler" Relationship="Self.FK_TblNotlar_TblDersler" FromRole="TblNotlar" ToRole="TblDersler" />
     <NavigationProperty Name="TblOgrenci" Relationship="Self.FK_TblNotlar_TblOgrenci" FromRole="TblNotlar" ToRole="TblOgrenci" />
+    <Property Name="Ortalama" Type="Decimal" Precision="5" Scale="2" />
   </EntityType>
   <EntityType Name="TblOgrenci">
     <Key>
@@ -55,6 +56,7 @@
     <Property Name="OgrBolum" Type="Int32" />
     <NavigationProperty Name="TblBolumler" Relationship="Self.FK_TblOgrenci_TblBolumler" FromRole="TblOgrenci" ToRole="TblBolumler" />
     <NavigationProperty Name="TblNotlar" Relationship="Self.FK_TblNotlar_TblOgrenci" FromRole="TblOgrenci" ToRole="TblNotlar" />
+    <Property Name="OgrDurum" Type="Boolean" />
   </EntityType>
   <Association Name="FK_TblOgrenci_TblBolumler">
     <End Role="TblBolumler" Type="Self.TblBolumler" Multiplicity="0..1" />
