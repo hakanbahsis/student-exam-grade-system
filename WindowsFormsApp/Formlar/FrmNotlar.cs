@@ -31,11 +31,16 @@ namespace WindowsFormsApp.Formlar
             cmbDers.ValueMember = "DersId";
             cmbDers.DataSource = db.TblDersler.ToList();
 
+            cmbDersAra.DisplayMember = "DersAd";
+            cmbDersAra.ValueMember = "DersId";
+            cmbDersAra.DataSource = db.TblDersler.ToList();
+
             cmbOgrenci.DisplayMember = "OgrAd";
             cmbOgrenci.ValueMember = "OgrId";
             cmbOgrenci.DataSource = db.TblOgrenci.ToList();
 
-            dataGridView1.DataSource = db.View_1.ToList();
+            //dataGridView1.DataSource = db.View_1.ToList(); //view ile listeleme
+            dataGridView1.DataSource = db.Notlar(); //Procedure ile listeleme
         }
 
         private void btnKaydet_Click(object sender, EventArgs e)
@@ -74,6 +79,54 @@ namespace WindowsFormsApp.Formlar
                 ortalama = (vize * 0.4) + (but * 0.6);
                 txtOrtalama.Text = ortalama.ToString();
             }
+        }
+
+        private void cmbDersAra_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            var degerler = from x in db.TblNotlar
+                select new
+                {
+                    x.NotId,
+                    x.DersId,
+                    x.TblDersler.DersAd,
+                    x.OgrId,
+                    x.TblOgrenci.OgrNumara,
+                   Öğrenci_Adı= x.TblOgrenci.OgrAd+" "+x.TblOgrenci.OgrSoyad,
+                    x.VizeNotu,
+                    x.FinalNotu,
+                    x.ButunlemeNotu,
+                    x.Ortalama
+                    
+                };
+           
+            int ders = int.Parse(cmbDersAra.SelectedValue.ToString());
+            dataGridView1.DataSource = degerler.Where(y => y.DersId ==ders).ToList();
+            dataGridView1.Columns["NotId"].Visible = false;
+            dataGridView1.Columns["DersId"].Visible = false;
+            dataGridView1.Columns["OgrId"].Visible = false;
+        }
+
+        private void btnAra_Click(object sender, EventArgs e)
+        {
+            var deger = db.TblOgrenci.Where(x => x.OgrNumara == txtNo.Text).Select(y => y.OgrId).FirstOrDefault();
+            var degerler = from x in db.TblNotlar
+                select new
+                {
+                    x.NotId,
+                    x.DersId,
+                    x.TblDersler.DersAd,
+                    x.OgrId,
+                    Öğrenci_Adı = x.TblOgrenci.OgrAd + " " + x.TblOgrenci.OgrSoyad,
+                    x.VizeNotu,
+                    x.FinalNotu,
+                    x.ButunlemeNotu,
+                    x.Ortalama
+
+                };
+            dataGridView1.DataSource = degerler.Where(z => z.OgrId == deger).ToList();
+            dataGridView1.Columns["NotId"].Visible = false;
+            dataGridView1.Columns["DersId"].Visible = false;
+            dataGridView1.Columns["OgrId"].Visible = false;
         }
     }
 }

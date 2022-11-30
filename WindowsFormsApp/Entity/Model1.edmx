@@ -108,6 +108,7 @@ warning 6002: The table/view 'OgrenciSinav.dbo.View_1' does not have a primary k
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <Function Name="Notlar" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
         <EntityContainer Name="OgrenciSinavModelStoreContainer">
           <EntitySet Name="TblAkademisyen" EntityType="Self.TblAkademisyen" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="TblBolumler" EntityType="Self.TblBolumler" Schema="dbo" store:Type="Tables" />
@@ -256,6 +257,7 @@ warning 6002: The table/view 'OgrenciSinav.dbo.View_1' does not have a primary k
             <End Role="TblNotlar" EntitySet="TblNotlar" />
           </AssociationSet>
           <EntitySet Name="View_1" EntityType="OgrenciSinavModel.View_1" />
+          <FunctionImport Name="Notlar" ReturnType="Collection(OgrenciSinavModel.Notlar_Result)" />
         </EntityContainer>
         <EntityType Name="View_1">
           <Key>
@@ -270,6 +272,15 @@ warning 6002: The table/view 'OgrenciSinav.dbo.View_1' does not have a primary k
           <Property Name="ButunlemeNotu" Type="Byte" />
           <Property Name="Ortalama" Type="Decimal" Precision="5" Scale="2" />
         </EntityType>
+        <ComplexType Name="Notlar_Result">
+          <Property Type="Int32" Name="NotId" Nullable="false" />
+          <Property Type="String" Name="Ders_Adı" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="ad_soyad" Nullable="true" MaxLength="101" />
+          <Property Type="Byte" Name="VizeNotu" Nullable="true" />
+          <Property Type="Byte" Name="FinalNotu" Nullable="true" />
+          <Property Type="Byte" Name="ButunlemeNotu" Nullable="true" />
+          <Property Type="Decimal" Name="Ortalama" Nullable="true" Precision="5" Scale="2" />
+        </ComplexType>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -347,6 +358,19 @@ warning 6002: The table/view 'OgrenciSinav.dbo.View_1' does not have a primary k
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
+          <FunctionImportMapping FunctionImportName="Notlar" FunctionName="OgrenciSinavModel.Store.Notlar">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="OgrenciSinavModel.Notlar_Result">
+                <ScalarProperty Name="NotId" ColumnName="NotId" />
+                <ScalarProperty Name="Ders_Adı" ColumnName="Ders Adı" />
+                <ScalarProperty Name="ad_soyad" ColumnName="ad soyad" />
+                <ScalarProperty Name="VizeNotu" ColumnName="VizeNotu" />
+                <ScalarProperty Name="FinalNotu" ColumnName="FinalNotu" />
+                <ScalarProperty Name="ButunlemeNotu" ColumnName="ButunlemeNotu" />
+                <ScalarProperty Name="Ortalama" ColumnName="Ortalama" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
         </EntityContainerMapping>
       </Mapping>
     </edmx:Mappings>

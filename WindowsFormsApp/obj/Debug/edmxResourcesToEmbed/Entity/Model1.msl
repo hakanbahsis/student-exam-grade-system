@@ -72,5 +72,18 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
+    <FunctionImportMapping FunctionImportName="Notlar" FunctionName="OgrenciSinavModel.Store.Notlar">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="OgrenciSinavModel.Notlar_Result">
+          <ScalarProperty Name="NotId" ColumnName="NotId" />
+          <ScalarProperty Name="Ders_Adı" ColumnName="Ders Adı" />
+          <ScalarProperty Name="ad_soyad" ColumnName="ad soyad" />
+          <ScalarProperty Name="VizeNotu" ColumnName="VizeNotu" />
+          <ScalarProperty Name="FinalNotu" ColumnName="FinalNotu" />
+          <ScalarProperty Name="ButunlemeNotu" ColumnName="ButunlemeNotu" />
+          <ScalarProperty Name="Ortalama" ColumnName="Ortalama" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
   </EntityContainerMapping>
 </Mapping>

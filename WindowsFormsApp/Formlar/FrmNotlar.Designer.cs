@@ -49,9 +49,15 @@
             this.txtFinal = new System.Windows.Forms.TextBox();
             this.txtVize = new System.Windows.Forms.TextBox();
             this.txtOrtalama = new System.Windows.Forms.TextBox();
+            this.label6 = new System.Windows.Forms.Label();
+            this.cmbDersAra = new System.Windows.Forms.ComboBox();
+            this.label7 = new System.Windows.Forms.Label();
+            this.btnAra = new System.Windows.Forms.Button();
+            this.txtNo = new System.Windows.Forms.MaskedTextBox();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.groupBox1.SuspendLayout();
+            this.groupBox3.SuspendLayout();
             this.SuspendLayout();
             // 
             // groupBox2
@@ -260,6 +266,11 @@
             // 
             // groupBox3
             // 
+            this.groupBox3.Controls.Add(this.txtNo);
+            this.groupBox3.Controls.Add(this.label6);
+            this.groupBox3.Controls.Add(this.cmbDersAra);
+            this.groupBox3.Controls.Add(this.label7);
+            this.groupBox3.Controls.Add(this.btnAra);
             this.groupBox3.Location = new System.Drawing.Point(12, 59);
             this.groupBox3.Name = "groupBox3";
             this.groupBox3.Size = new System.Drawing.Size(733, 106);
@@ -322,6 +333,69 @@
             this.txtOrtalama.Size = new System.Drawing.Size(199, 27);
             this.txtOrtalama.TabIndex = 4;
             // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Bold);
+            this.label6.ForeColor = System.Drawing.Color.White;
+            this.label6.Location = new System.Drawing.Point(7, 28);
+            this.label6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(50, 25);
+            this.label6.TabIndex = 5;
+            this.label6.Text = "Ders";
+            // 
+            // cmbDersAra
+            // 
+            this.cmbDersAra.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(51)))), ((int)(((byte)(64)))));
+            this.cmbDersAra.ForeColor = System.Drawing.Color.White;
+            this.cmbDersAra.FormattingEnabled = true;
+            this.cmbDersAra.Location = new System.Drawing.Point(65, 27);
+            this.cmbDersAra.Margin = new System.Windows.Forms.Padding(4);
+            this.cmbDersAra.Name = "cmbDersAra";
+            this.cmbDersAra.Size = new System.Drawing.Size(240, 30);
+            this.cmbDersAra.TabIndex = 6;
+            this.cmbDersAra.SelectedIndexChanged += new System.EventHandler(this.cmbDersAra_SelectedIndexChanged);
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Bold);
+            this.label7.ForeColor = System.Drawing.Color.White;
+            this.label7.Location = new System.Drawing.Point(342, 32);
+            this.label7.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(165, 25);
+            this.label7.TabIndex = 3;
+            this.label7.Text = "Öğrenci Numarası";
+            // 
+            // btnAra
+            // 
+            this.btnAra.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(177)))), ((int)(((byte)(140)))));
+            this.btnAra.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnAra.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAra.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.btnAra.ForeColor = System.Drawing.Color.White;
+            this.btnAra.Location = new System.Drawing.Point(574, 64);
+            this.btnAra.Margin = new System.Windows.Forms.Padding(4);
+            this.btnAra.Name = "btnAra";
+            this.btnAra.Size = new System.Drawing.Size(121, 33);
+            this.btnAra.TabIndex = 7;
+            this.btnAra.Text = "Ara";
+            this.btnAra.UseVisualStyleBackColor = false;
+            this.btnAra.Click += new System.EventHandler(this.btnAra_Click);
+            // 
+            // txtNo
+            // 
+            this.txtNo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(51)))), ((int)(((byte)(64)))));
+            this.txtNo.ForeColor = System.Drawing.Color.White;
+            this.txtNo.Location = new System.Drawing.Point(498, 31);
+            this.txtNo.Mask = "00000";
+            this.txtNo.Name = "txtNo";
+            this.txtNo.Size = new System.Drawing.Size(197, 28);
+            this.txtNo.TabIndex = 8;
+            this.txtNo.ValidatingType = typeof(int);
+            // 
             // FrmNotlar
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 22F);
@@ -344,6 +418,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
+            this.groupBox3.ResumeLayout(false);
+            this.groupBox3.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -372,5 +448,10 @@
         private System.Windows.Forms.TextBox txtBut;
         private System.Windows.Forms.TextBox txtFinal;
         private System.Windows.Forms.TextBox txtVize;
+        private System.Windows.Forms.MaskedTextBox txtNo;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.ComboBox cmbDersAra;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Button btnAra;
     }
 }
