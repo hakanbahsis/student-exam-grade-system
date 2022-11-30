@@ -112,5 +112,19 @@
       <End Role="TblOgrenci" EntitySet="TblOgrenci" />
       <End Role="TblNotlar" EntitySet="TblNotlar" />
     </AssociationSet>
+    <EntitySet Name="View_1" EntityType="OgrenciSinavModel.View_1" />
   </EntityContainer>
+  <EntityType Name="View_1">
+    <Key>
+      <PropertyRef Name="NotId" />
+    </Key>
+    <Property Name="NotId" Type="Int32" Nullable="false" />
+    <Property Name="OgrAd" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="OgrSoyad" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="DersAd" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="VizeNotu" Type="Byte" />
+    <Property Name="FinalNotu" Type="Byte" />
+    <Property Name="ButunlemeNotu" Type="Byte" />
+    <Property Name="Ortalama" Type="Decimal" Precision="5" Scale="2" />
+  </EntityType>
 </Schema>

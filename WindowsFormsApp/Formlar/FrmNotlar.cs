@@ -34,6 +34,8 @@ namespace WindowsFormsApp.Formlar
             cmbOgrenci.DisplayMember = "OgrAd";
             cmbOgrenci.ValueMember = "OgrId";
             cmbOgrenci.DataSource = db.TblOgrenci.ToList();
+
+            dataGridView1.DataSource = db.View_1.ToList();
         }
 
         private void btnKaydet_Click(object sender, EventArgs e)

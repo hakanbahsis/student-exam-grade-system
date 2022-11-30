@@ -52,6 +52,21 @@
     <Property Name="OgrBolum" Type="int" />
     <Property Name="OgrDurum" Type="bit" />
   </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'OgrenciSinav.dbo.View_1' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="View_1">
+    <Key>
+      <PropertyRef Name="NotId" />
+    </Key>
+    <Property Name="NotId" Type="int" Nullable="false" />
+    <Property Name="OgrAd" Type="nvarchar" MaxLength="50" />
+    <Property Name="OgrSoyad" Type="nvarchar" MaxLength="50" />
+    <Property Name="DersAd" Type="nvarchar" MaxLength="50" />
+    <Property Name="VizeNotu" Type="tinyint" />
+    <Property Name="FinalNotu" Type="tinyint" />
+    <Property Name="ButunlemeNotu" Type="tinyint" />
+    <Property Name="Ortalama" Type="decimal" Precision="5" Scale="2" />
+  </EntityType>
   <Association Name="FK_TblNotlar_TblDersler">
     <End Role="TblDersler" Type="Self.TblDersler" Multiplicity="0..1" />
     <End Role="TblNotlar" Type="Self.TblNotlar" Multiplicity="*" />
@@ -94,6 +109,18 @@
     <EntitySet Name="TblDersler" EntityType="Self.TblDersler" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="TblNotlar" EntityType="Self.TblNotlar" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="TblOgrenci" EntityType="Self.TblOgrenci" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="View_1" EntityType="Self.View_1" store:Type="Views" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [View_1].[NotId] AS [NotId], 
+    [View_1].[OgrAd] AS [OgrAd], 
+    [View_1].[OgrSoyad] AS [OgrSoyad], 
+    [View_1].[DersAd] AS [DersAd], 
+    [View_1].[VizeNotu] AS [VizeNotu], 
+    [View_1].[FinalNotu] AS [FinalNotu], 
+    [View_1].[ButunlemeNotu] AS [ButunlemeNotu], 
+    [View_1].[Ortalama] AS [Ortalama]
+    FROM [dbo].[View_1] AS [View_1]</DefiningQuery>
+    </EntitySet>
     <AssociationSet Name="FK_TblNotlar_TblDersler" Association="Self.FK_TblNotlar_TblDersler">
       <End Role="TblDersler" EntitySet="TblDersler" />
       <End Role="TblNotlar" EntitySet="TblNotlar" />
