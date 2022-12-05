@@ -32,28 +32,28 @@
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.button1 = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.txtOrtalama = new System.Windows.Forms.TextBox();
+            this.txtBut = new System.Windows.Forms.TextBox();
+            this.txtFinal = new System.Windows.Forms.TextBox();
+            this.txtVize = new System.Windows.Forms.TextBox();
             this.cmbOgrenci = new System.Windows.Forms.ComboBox();
             this.label4 = new System.Windows.Forms.Label();
             this.cmbDers = new System.Windows.Forms.ComboBox();
+            this.label5 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.btnGuncelle = new System.Windows.Forms.Button();
+            this.btnKaydet = new System.Windows.Forms.Button();
             this.btnHesapla = new System.Windows.Forms.Button();
             this.label9 = new System.Windows.Forms.Label();
-            this.btnKaydet = new System.Windows.Forms.Button();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
-            this.label5 = new System.Windows.Forms.Label();
-            this.txtBut = new System.Windows.Forms.TextBox();
-            this.txtFinal = new System.Windows.Forms.TextBox();
-            this.txtVize = new System.Windows.Forms.TextBox();
-            this.txtOrtalama = new System.Windows.Forms.TextBox();
+            this.txtNo = new System.Windows.Forms.MaskedTextBox();
             this.label6 = new System.Windows.Forms.Label();
             this.cmbDersAra = new System.Windows.Forms.ComboBox();
             this.label7 = new System.Windows.Forms.Label();
             this.btnAra = new System.Windows.Forms.Button();
-            this.txtNo = new System.Windows.Forms.MaskedTextBox();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.groupBox1.SuspendLayout();
@@ -77,10 +77,13 @@
             this.dataGridView1.Location = new System.Drawing.Point(3, 24);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
+            this.dataGridView1.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            this.dataGridView1.RowHeadersVisible = false;
             this.dataGridView1.RowHeadersWidth = 51;
             this.dataGridView1.RowTemplate.Height = 24;
             this.dataGridView1.Size = new System.Drawing.Size(727, 328);
             this.dataGridView1.TabIndex = 0;
+            this.dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellClick);
             // 
             // button1
             // 
@@ -123,6 +126,50 @@
             this.groupBox1.TabIndex = 12;
             this.groupBox1.TabStop = false;
             // 
+            // txtOrtalama
+            // 
+            this.txtOrtalama.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(51)))), ((int)(((byte)(64)))));
+            this.txtOrtalama.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.txtOrtalama.ForeColor = System.Drawing.Color.White;
+            this.txtOrtalama.Location = new System.Drawing.Point(172, 126);
+            this.txtOrtalama.Margin = new System.Windows.Forms.Padding(4);
+            this.txtOrtalama.Name = "txtOrtalama";
+            this.txtOrtalama.Size = new System.Drawing.Size(199, 27);
+            this.txtOrtalama.TabIndex = 4;
+            // 
+            // txtBut
+            // 
+            this.txtBut.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(51)))), ((int)(((byte)(64)))));
+            this.txtBut.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.txtBut.ForeColor = System.Drawing.Color.White;
+            this.txtBut.Location = new System.Drawing.Point(172, 97);
+            this.txtBut.Margin = new System.Windows.Forms.Padding(4);
+            this.txtBut.Name = "txtBut";
+            this.txtBut.Size = new System.Drawing.Size(199, 27);
+            this.txtBut.TabIndex = 3;
+            // 
+            // txtFinal
+            // 
+            this.txtFinal.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(51)))), ((int)(((byte)(64)))));
+            this.txtFinal.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.txtFinal.ForeColor = System.Drawing.Color.White;
+            this.txtFinal.Location = new System.Drawing.Point(172, 61);
+            this.txtFinal.Margin = new System.Windows.Forms.Padding(4);
+            this.txtFinal.Name = "txtFinal";
+            this.txtFinal.Size = new System.Drawing.Size(199, 27);
+            this.txtFinal.TabIndex = 2;
+            // 
+            // txtVize
+            // 
+            this.txtVize.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(51)))), ((int)(((byte)(64)))));
+            this.txtVize.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.txtVize.ForeColor = System.Drawing.Color.White;
+            this.txtVize.Location = new System.Drawing.Point(172, 26);
+            this.txtVize.Margin = new System.Windows.Forms.Padding(4);
+            this.txtVize.Name = "txtVize";
+            this.txtVize.Size = new System.Drawing.Size(199, 27);
+            this.txtVize.TabIndex = 1;
+            // 
             // cmbOgrenci
             // 
             this.cmbOgrenci.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(51)))), ((int)(((byte)(64)))));
@@ -156,6 +203,18 @@
             this.cmbDers.Name = "cmbDers";
             this.cmbDers.Size = new System.Drawing.Size(240, 30);
             this.cmbDers.TabIndex = 6;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Bold);
+            this.label5.ForeColor = System.Drawing.Color.White;
+            this.label5.Location = new System.Drawing.Point(72, 127);
+            this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(92, 25);
+            this.label5.TabIndex = 3;
+            this.label5.Text = "Ortalama";
             // 
             // label8
             // 
@@ -219,6 +278,23 @@
             this.btnGuncelle.TabIndex = 9;
             this.btnGuncelle.Text = "Güncelle";
             this.btnGuncelle.UseVisualStyleBackColor = false;
+            this.btnGuncelle.Click += new System.EventHandler(this.btnGuncelle_Click);
+            // 
+            // btnKaydet
+            // 
+            this.btnKaydet.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(177)))), ((int)(((byte)(140)))));
+            this.btnKaydet.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnKaydet.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnKaydet.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
+            this.btnKaydet.ForeColor = System.Drawing.Color.White;
+            this.btnKaydet.Location = new System.Drawing.Point(118, 294);
+            this.btnKaydet.Margin = new System.Windows.Forms.Padding(4);
+            this.btnKaydet.Name = "btnKaydet";
+            this.btnKaydet.Size = new System.Drawing.Size(238, 37);
+            this.btnKaydet.TabIndex = 8;
+            this.btnKaydet.Text = "Kaydet";
+            this.btnKaydet.UseVisualStyleBackColor = false;
+            this.btnKaydet.Click += new System.EventHandler(this.btnKaydet_Click);
             // 
             // btnHesapla
             // 
@@ -248,22 +324,6 @@
             this.label9.TabIndex = 14;
             this.label9.Text = "Öğrenci Sınav Not Formu";
             // 
-            // btnKaydet
-            // 
-            this.btnKaydet.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(177)))), ((int)(((byte)(140)))));
-            this.btnKaydet.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnKaydet.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnKaydet.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
-            this.btnKaydet.ForeColor = System.Drawing.Color.White;
-            this.btnKaydet.Location = new System.Drawing.Point(118, 294);
-            this.btnKaydet.Margin = new System.Windows.Forms.Padding(4);
-            this.btnKaydet.Name = "btnKaydet";
-            this.btnKaydet.Size = new System.Drawing.Size(238, 37);
-            this.btnKaydet.TabIndex = 8;
-            this.btnKaydet.Text = "Kaydet";
-            this.btnKaydet.UseVisualStyleBackColor = false;
-            this.btnKaydet.Click += new System.EventHandler(this.btnKaydet_Click);
-            // 
             // groupBox3
             // 
             this.groupBox3.Controls.Add(this.txtNo);
@@ -277,61 +337,16 @@
             this.groupBox3.TabIndex = 16;
             this.groupBox3.TabStop = false;
             // 
-            // label5
+            // txtNo
             // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Bold);
-            this.label5.ForeColor = System.Drawing.Color.White;
-            this.label5.Location = new System.Drawing.Point(72, 127);
-            this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(92, 25);
-            this.label5.TabIndex = 3;
-            this.label5.Text = "Ortalama";
-            // 
-            // txtBut
-            // 
-            this.txtBut.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(51)))), ((int)(((byte)(64)))));
-            this.txtBut.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.txtBut.ForeColor = System.Drawing.Color.White;
-            this.txtBut.Location = new System.Drawing.Point(172, 97);
-            this.txtBut.Margin = new System.Windows.Forms.Padding(4);
-            this.txtBut.Name = "txtBut";
-            this.txtBut.Size = new System.Drawing.Size(199, 27);
-            this.txtBut.TabIndex = 3;
-            // 
-            // txtFinal
-            // 
-            this.txtFinal.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(51)))), ((int)(((byte)(64)))));
-            this.txtFinal.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.txtFinal.ForeColor = System.Drawing.Color.White;
-            this.txtFinal.Location = new System.Drawing.Point(172, 61);
-            this.txtFinal.Margin = new System.Windows.Forms.Padding(4);
-            this.txtFinal.Name = "txtFinal";
-            this.txtFinal.Size = new System.Drawing.Size(199, 27);
-            this.txtFinal.TabIndex = 2;
-            // 
-            // txtVize
-            // 
-            this.txtVize.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(51)))), ((int)(((byte)(64)))));
-            this.txtVize.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.txtVize.ForeColor = System.Drawing.Color.White;
-            this.txtVize.Location = new System.Drawing.Point(172, 26);
-            this.txtVize.Margin = new System.Windows.Forms.Padding(4);
-            this.txtVize.Name = "txtVize";
-            this.txtVize.Size = new System.Drawing.Size(199, 27);
-            this.txtVize.TabIndex = 1;
-            // 
-            // txtOrtalama
-            // 
-            this.txtOrtalama.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(51)))), ((int)(((byte)(64)))));
-            this.txtOrtalama.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.txtOrtalama.ForeColor = System.Drawing.Color.White;
-            this.txtOrtalama.Location = new System.Drawing.Point(172, 126);
-            this.txtOrtalama.Margin = new System.Windows.Forms.Padding(4);
-            this.txtOrtalama.Name = "txtOrtalama";
-            this.txtOrtalama.Size = new System.Drawing.Size(199, 27);
-            this.txtOrtalama.TabIndex = 4;
+            this.txtNo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(51)))), ((int)(((byte)(64)))));
+            this.txtNo.ForeColor = System.Drawing.Color.White;
+            this.txtNo.Location = new System.Drawing.Point(498, 31);
+            this.txtNo.Mask = "00000";
+            this.txtNo.Name = "txtNo";
+            this.txtNo.Size = new System.Drawing.Size(197, 28);
+            this.txtNo.TabIndex = 8;
+            this.txtNo.ValidatingType = typeof(int);
             // 
             // label6
             // 
@@ -384,17 +399,6 @@
             this.btnAra.Text = "Ara";
             this.btnAra.UseVisualStyleBackColor = false;
             this.btnAra.Click += new System.EventHandler(this.btnAra_Click);
-            // 
-            // txtNo
-            // 
-            this.txtNo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(51)))), ((int)(((byte)(64)))));
-            this.txtNo.ForeColor = System.Drawing.Color.White;
-            this.txtNo.Location = new System.Drawing.Point(498, 31);
-            this.txtNo.Mask = "00000";
-            this.txtNo.Name = "txtNo";
-            this.txtNo.Size = new System.Drawing.Size(197, 28);
-            this.txtNo.TabIndex = 8;
-            this.txtNo.ValidatingType = typeof(int);
             // 
             // FrmNotlar
             // 
