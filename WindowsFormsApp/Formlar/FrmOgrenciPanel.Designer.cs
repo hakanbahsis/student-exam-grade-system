@@ -34,12 +34,11 @@
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.txtNumara = new System.Windows.Forms.MaskedTextBox();
             this.label8 = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.txtResim = new System.Windows.Forms.TextBox();
+            this.txtBolum = new System.Windows.Forms.TextBox();
             this.txtMail = new System.Windows.Forms.TextBox();
             this.txtSifre = new System.Windows.Forms.TextBox();
             this.txtSoyad = new System.Windows.Forms.TextBox();
@@ -47,7 +46,10 @@
             this.btnGuncelle = new System.Windows.Forms.Button();
             this.txtAd = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
-            this.txtBolum = new System.Windows.Forms.TextBox();
+            this.txtYeniSifre = new System.Windows.Forms.TextBox();
+            this.label5 = new System.Windows.Forms.Label();
+            this.txtSifreTekrar = new System.Windows.Forms.TextBox();
+            this.label7 = new System.Windows.Forms.Label();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.groupBox1.SuspendLayout();
@@ -58,7 +60,7 @@
             this.groupBox2.Controls.Add(this.dataGridView1);
             this.groupBox2.Location = new System.Drawing.Point(7, 45);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(733, 325);
+            this.groupBox2.Size = new System.Drawing.Size(733, 364);
             this.groupBox2.TabIndex = 15;
             this.groupBox2.TabStop = false;
             // 
@@ -73,7 +75,7 @@
             this.dataGridView1.RowHeadersVisible = false;
             this.dataGridView1.RowHeadersWidth = 51;
             this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(727, 298);
+            this.dataGridView1.Size = new System.Drawing.Size(727, 337);
             this.dataGridView1.TabIndex = 0;
             // 
             // button1
@@ -96,14 +98,16 @@
             // 
             this.groupBox1.Controls.Add(this.txtNumara);
             this.groupBox1.Controls.Add(this.label8);
-            this.groupBox1.Controls.Add(this.label7);
             this.groupBox1.Controls.Add(this.label6);
+            this.groupBox1.Controls.Add(this.label7);
+            this.groupBox1.Controls.Add(this.label5);
             this.groupBox1.Controls.Add(this.label4);
             this.groupBox1.Controls.Add(this.label3);
             this.groupBox1.Controls.Add(this.label2);
-            this.groupBox1.Controls.Add(this.txtResim);
             this.groupBox1.Controls.Add(this.txtBolum);
             this.groupBox1.Controls.Add(this.txtMail);
+            this.groupBox1.Controls.Add(this.txtSifreTekrar);
+            this.groupBox1.Controls.Add(this.txtYeniSifre);
             this.groupBox1.Controls.Add(this.txtSifre);
             this.groupBox1.Controls.Add(this.txtSoyad);
             this.groupBox1.Controls.Add(this.label1);
@@ -113,9 +117,10 @@
             this.groupBox1.Margin = new System.Windows.Forms.Padding(4);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Padding = new System.Windows.Forms.Padding(4);
-            this.groupBox1.Size = new System.Drawing.Size(379, 325);
+            this.groupBox1.Size = new System.Drawing.Size(379, 364);
             this.groupBox1.TabIndex = 12;
             this.groupBox1.TabStop = false;
+            this.groupBox1.Enter += new System.EventHandler(this.groupBox1_Enter);
             // 
             // txtNumara
             // 
@@ -134,31 +139,19 @@
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Bold);
             this.label8.ForeColor = System.Drawing.Color.White;
-            this.label8.Location = new System.Drawing.Point(53, 244);
+            this.label8.Location = new System.Drawing.Point(55, 279);
             this.label8.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(67, 25);
             this.label8.TabIndex = 5;
             this.label8.Text = "Bölüm";
             // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Bold);
-            this.label7.ForeColor = System.Drawing.Color.White;
-            this.label7.Location = new System.Drawing.Point(57, 208);
-            this.label7.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(63, 25);
-            this.label7.TabIndex = 3;
-            this.label7.Text = "Resim";
-            // 
             // label6
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Bold);
             this.label6.ForeColor = System.Drawing.Color.White;
-            this.label6.Location = new System.Drawing.Point(71, 173);
+            this.label6.Location = new System.Drawing.Point(71, 243);
             this.label6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(49, 25);
@@ -201,16 +194,17 @@
             this.label2.TabIndex = 3;
             this.label2.Text = "Soyadı";
             // 
-            // txtResim
+            // txtBolum
             // 
-            this.txtResim.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(51)))), ((int)(((byte)(64)))));
-            this.txtResim.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.txtResim.ForeColor = System.Drawing.Color.White;
-            this.txtResim.Location = new System.Drawing.Point(127, 205);
-            this.txtResim.Margin = new System.Windows.Forms.Padding(4);
-            this.txtResim.Name = "txtResim";
-            this.txtResim.Size = new System.Drawing.Size(240, 27);
-            this.txtResim.TabIndex = 7;
+            this.txtBolum.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(51)))), ((int)(((byte)(64)))));
+            this.txtBolum.Enabled = false;
+            this.txtBolum.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.txtBolum.ForeColor = System.Drawing.Color.White;
+            this.txtBolum.Location = new System.Drawing.Point(127, 275);
+            this.txtBolum.Margin = new System.Windows.Forms.Padding(4);
+            this.txtBolum.Name = "txtBolum";
+            this.txtBolum.Size = new System.Drawing.Size(240, 27);
+            this.txtBolum.TabIndex = 8;
             // 
             // txtMail
             // 
@@ -218,11 +212,11 @@
             this.txtMail.Enabled = false;
             this.txtMail.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.txtMail.ForeColor = System.Drawing.Color.White;
-            this.txtMail.Location = new System.Drawing.Point(127, 170);
+            this.txtMail.Location = new System.Drawing.Point(127, 240);
             this.txtMail.Margin = new System.Windows.Forms.Padding(4);
             this.txtMail.Name = "txtMail";
             this.txtMail.Size = new System.Drawing.Size(240, 27);
-            this.txtMail.TabIndex = 6;
+            this.txtMail.TabIndex = 7;
             // 
             // txtSifre
             // 
@@ -266,13 +260,14 @@
             this.btnGuncelle.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnGuncelle.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
             this.btnGuncelle.ForeColor = System.Drawing.Color.White;
-            this.btnGuncelle.Location = new System.Drawing.Point(127, 278);
+            this.btnGuncelle.Location = new System.Drawing.Point(127, 310);
             this.btnGuncelle.Margin = new System.Windows.Forms.Padding(4);
             this.btnGuncelle.Name = "btnGuncelle";
             this.btnGuncelle.Size = new System.Drawing.Size(238, 37);
-            this.btnGuncelle.TabIndex = 10;
+            this.btnGuncelle.TabIndex = 9;
             this.btnGuncelle.Text = "Güncelle";
             this.btnGuncelle.UseVisualStyleBackColor = false;
+            this.btnGuncelle.Click += new System.EventHandler(this.btnGuncelle_Click);
             // 
             // txtAd
             // 
@@ -291,31 +286,65 @@
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Segoe UI Black", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.label9.ForeColor = System.Drawing.Color.White;
-            this.label9.Location = new System.Drawing.Point(262, 9);
+            this.label9.Location = new System.Drawing.Point(367, 11);
             this.label9.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(370, 31);
             this.label9.TabIndex = 14;
             this.label9.Text = "Öğrenci Bilgi Düzenleme Formu";
             // 
-            // txtBolum
+            // txtYeniSifre
             // 
-            this.txtBolum.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(51)))), ((int)(((byte)(64)))));
-            this.txtBolum.Enabled = false;
-            this.txtBolum.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.txtBolum.ForeColor = System.Drawing.Color.White;
-            this.txtBolum.Location = new System.Drawing.Point(125, 240);
-            this.txtBolum.Margin = new System.Windows.Forms.Padding(4);
-            this.txtBolum.Name = "txtBolum";
-            this.txtBolum.Size = new System.Drawing.Size(240, 27);
-            this.txtBolum.TabIndex = 8;
+            this.txtYeniSifre.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(51)))), ((int)(((byte)(64)))));
+            this.txtYeniSifre.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.txtYeniSifre.ForeColor = System.Drawing.Color.White;
+            this.txtYeniSifre.Location = new System.Drawing.Point(127, 170);
+            this.txtYeniSifre.Margin = new System.Windows.Forms.Padding(4);
+            this.txtYeniSifre.Name = "txtYeniSifre";
+            this.txtYeniSifre.Size = new System.Drawing.Size(240, 27);
+            this.txtYeniSifre.TabIndex = 5;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Bold);
+            this.label5.ForeColor = System.Drawing.Color.White;
+            this.label5.Location = new System.Drawing.Point(29, 170);
+            this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(91, 25);
+            this.label5.TabIndex = 3;
+            this.label5.Text = "Yeni Şifre";
+            // 
+            // txtSifreTekrar
+            // 
+            this.txtSifreTekrar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(51)))), ((int)(((byte)(64)))));
+            this.txtSifreTekrar.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.txtSifreTekrar.ForeColor = System.Drawing.Color.White;
+            this.txtSifreTekrar.Location = new System.Drawing.Point(127, 205);
+            this.txtSifreTekrar.Margin = new System.Windows.Forms.Padding(4);
+            this.txtSifreTekrar.Name = "txtSifreTekrar";
+            this.txtSifreTekrar.Size = new System.Drawing.Size(240, 27);
+            this.txtSifreTekrar.TabIndex = 6;
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Bold);
+            this.label7.ForeColor = System.Drawing.Color.White;
+            this.label7.Location = new System.Drawing.Point(11, 205);
+            this.label7.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(109, 25);
+            this.label7.TabIndex = 3;
+            this.label7.Text = "Şifre Tekrar";
             // 
             // FrmOgrenciPanel
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 22F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(51)))), ((int)(((byte)(64)))));
-            this.ClientSize = new System.Drawing.Size(1133, 505);
+            this.ClientSize = new System.Drawing.Size(1133, 471);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.groupBox1);
@@ -344,12 +373,10 @@
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.MaskedTextBox txtNumara;
         private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox txtResim;
         private System.Windows.Forms.TextBox txtMail;
         private System.Windows.Forms.TextBox txtSifre;
         private System.Windows.Forms.TextBox txtSoyad;
@@ -358,5 +385,9 @@
         private System.Windows.Forms.TextBox txtAd;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.TextBox txtBolum;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.TextBox txtYeniSifre;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.TextBox txtSifreTekrar;
     }
 }

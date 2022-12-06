@@ -91,6 +91,12 @@
     <Compile Include="Entity\View_1.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
+    <Compile Include="Formlar\FrmAkademisyenGirisi.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formlar\FrmAkademisyenGirisi.Designer.cs">
+      <DependentUpon>FrmAkademisyenGirisi.cs</DependentUpon>
+    </Compile>
     <Compile Include="Formlar\FrmBolumler.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -103,11 +109,23 @@
     <Compile Include="Formlar\FrmBolumListesi.Designer.cs">
       <DependentUpon>FrmBolumListesi.cs</DependentUpon>
     </Compile>
+    <Compile Include="Formlar\FrmDersListesi.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formlar\FrmDersListesi.Designer.cs">
+      <DependentUpon>FrmDersListesi.cs</DependentUpon>
+    </Compile>
     <Compile Include="Formlar\FrmGiris.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Formlar\FrmGiris.Designer.cs">
       <DependentUpon>FrmGiris.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formlar\FrmMenu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formlar\FrmMenu.Designer.cs">
+      <DependentUpon>FrmMenu.cs</DependentUpon>
     </Compile>
     <Compile Include="Formlar\FrmNotlar.cs">
       <SubType>Form</SubType>
@@ -133,16 +151,37 @@
     <Compile Include="Formlar\FrmOgrenciPanel.Designer.cs">
       <DependentUpon>FrmOgrenciPanel.cs</DependentUpon>
     </Compile>
+    <Compile Include="Formlar\FrmOkulGiris.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formlar\FrmOkulGiris.Designer.cs">
+      <DependentUpon>FrmOkulGiris.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formlar\FrmYeniDers.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formlar\FrmYeniDers.Designer.cs">
+      <DependentUpon>FrmYeniDers.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Formlar\FrmAkademisyenGirisi.resx">
+      <DependentUpon>FrmAkademisyenGirisi.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Formlar\FrmBolumler.resx">
       <DependentUpon>FrmBolumler.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Formlar\FrmBolumListesi.resx">
       <DependentUpon>FrmBolumListesi.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Formlar\FrmDersListesi.resx">
+      <DependentUpon>FrmDersListesi.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Formlar\FrmGiris.resx">
       <DependentUpon>FrmGiris.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formlar\FrmMenu.resx">
+      <DependentUpon>FrmMenu.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Formlar\FrmNotlar.resx">
       <DependentUpon>FrmNotlar.cs</DependentUpon>
@@ -155,6 +194,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Formlar\FrmOgrenciPanel.resx">
       <DependentUpon>FrmOgrenciPanel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formlar\FrmOkulGiris.resx">
+      <DependentUpon>FrmOkulGiris.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formlar\FrmYeniDers.resx">
+      <DependentUpon>FrmYeniDers.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

@@ -20,3 +20,8 @@ C:\Users\Lenovo\source\repos\StudentExamNoteSystem\WindowsFormsApp\obj\Debug\Win
 C:\Users\Lenovo\source\repos\StudentExamNoteSystem\WindowsFormsApp\obj\Debug\WindowsFormsApp.Formlar.FrmNotlar.resources
 C:\Users\Lenovo\source\repos\StudentExamNoteSystem\WindowsFormsApp\obj\Debug\WindowsFormsApp.Formlar.FrmOgrenciPanel.resources
 C:\Users\Lenovo\source\repos\StudentExamNoteSystem\WindowsFormsApp\obj\Debug\WindowsFormsApp.Formlar.FrmGiris.resources
+C:\Users\Lenovo\source\repos\StudentExamNoteSystem\WindowsFormsApp\obj\Debug\WindowsFormsApp.Formlar.FrmDersListesi.resources
+C:\Users\Lenovo\source\repos\StudentExamNoteSystem\WindowsFormsApp\obj\Debug\WindowsFormsApp.Formlar.FrmMenu.resources
+C:\Users\Lenovo\source\repos\StudentExamNoteSystem\WindowsFormsApp\obj\Debug\WindowsFormsApp.Formlar.FrmYeniDers.resources
+C:\Users\Lenovo\source\repos\StudentExamNoteSystem\WindowsFormsApp\obj\Debug\WindowsFormsApp.Formlar.FrmAkademisyenGirisi.resources
+C:\Users\Lenovo\source\repos\StudentExamNoteSystem\WindowsFormsApp\obj\Debug\WindowsFormsApp.Formlar.FrmOkulGiris.resources

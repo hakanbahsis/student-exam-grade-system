@@ -11,37 +11,36 @@ using WindowsFormsApp.Entity;
 
 namespace WindowsFormsApp.Formlar
 {
-    public partial class FrmGiris : Form
+    public partial class FrmAkademisyenGirisi : Form
     {
-        public FrmGiris()
+        public FrmAkademisyenGirisi()
         {
             InitializeComponent();
         }
 
+        private OgrenciSinavEntities db = new OgrenciSinavEntities();
+        TblAkademisyen akademisyen=new TblAkademisyen();
         private void button1_Click(object sender, EventArgs e)
         {
             this.Close();
         }
 
-        private OgrenciSinavEntities db = new OgrenciSinavEntities();
-        private TblOgrenci ogrenci = new TblOgrenci();
         private void btnGiris_Click(object sender, EventArgs e)
         {
-            ogrenci = db.TblOgrenci.Where(x => x.OgrNumara == txtNumara.Text && x.OgrSifre == txtSifre.Text)
-                .SingleOrDefault();
-            if (ogrenci==null)
+            akademisyen =
+                db.TblAkademisyen.Where(x => x.AkademisyenNumara == txtNumara.Text && x.AkademisyenSifre == txtSifre.Text).SingleOrDefault();
+            if (akademisyen==null)
             {
                 MessageBox.Show("Giriş Başarısız. Lütfen Bilgileri Kontrol Ediniz.", "Hata", MessageBoxButtons.OK,
                     MessageBoxIcon.Error);
-
             }
-            else if (ogrenci!=null)
+            else if (akademisyen !=null)
             {
-                    FrmOgrenciPanel fr = new FrmOgrenciPanel();
-                    fr.numara = txtNumara.Text;
-                    fr.Show();
-                    this.Hide();
+                FrmMenu fr = new FrmMenu();
+                fr.Show();
+                this.Hide();
             }
+           
         }
     }
 }

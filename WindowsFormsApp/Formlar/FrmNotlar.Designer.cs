@@ -416,7 +416,7 @@
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "FrmNotlar";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Notlar";
+            this.Text = " ";
             this.Load += new System.EventHandler(this.FrmNotlar_Load);
             this.groupBox2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
